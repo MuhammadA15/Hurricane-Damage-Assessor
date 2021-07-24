@@ -3,5 +3,5 @@ A website that predicts potential hurricane wind damage to structures using mach
 
 Built using Python web framework Flask
 
-# To run
+# To Run
 use command Flask run
