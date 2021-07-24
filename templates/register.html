@@ -1,0 +1,104 @@
+{% block styles %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/register.css') }}">
+{% endblock %}
+
+{% block navbar %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('index') }}">Hurricane Damage Assessor</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class='nav-item'><a class='nav-link' href="{{ url_for('index') }}">Home</a></li>
+                </ul>
+            </div>
+            <div class='collapse navbar-collapse' id='rightnav'>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    {% if current_user.is_anonymous %}
+                        <li class='nav-item'><a class='nav-link' href="{{ url_for('register') }}">Sign Up</a></li>
+                    {% else %}
+                    {% endif %}
+                    {% if current_user.is_anonymous %}
+                        <li class='nav-item'><a class='nav-link' href="{{ url_for('login') }}">Login</a></li>
+                    {% else %}
+                        <li class='nav-item'><a class='nav-link' href="{{ url_for('logout') }}">Logout</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block content %}
+    <div class='container'>
+        <div class='row mb-3'></div>
+        <div class='row justify-content-center mb-3'>
+            <div class='col-3 text-center'>
+                <h2 style='font-weight: 400;'>Create An Account</h2>
+            </div>
+        </div>
+        <div class='row justify-content-center mb-3'>
+            <div class='col-3 form-col'>
+                <form action="" method="POST">
+                    <div class='mb-3'>
+                        <label for="username" class="form-label">Username  <span style='color:red'>*</span></label>
+                        <input type="text" class="form-control" id="username" name='username' aria-describedby="usernameFeedback" required>
+                        {% with messages = get_flashed_messages(category_filter=["username"]) %}
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div style='color: red' id='usernameFeedback' class='form-text'>
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                        {% endwith %}
+                    </div>
+                    <div class='mb-3'>
+                        <label for="username" class="form-label">Email  <span style='color:red'>*</span></label>
+                        <input type="email" class="form-control" id="email" name='email' aria-describedby="emailFeedback" required>
+                        {% with messages = get_flashed_messages(category_filter=["email"]) %}
+                        {% if messages %}
+                            {% for message in messages %}
+                            <div style='color: red' id='emailFeedback' class='form-text'>
+                                {{ message }}
+                            </div>
+                            {% endfor %}
+                        {% endif %}
+                        {% endwith %}
+                    </div>
+                    <div class='mb-3'>
+                        <label for="password" class="form-label">Password  <span style='color:red'>*</span></label>
+                        <input type="password" class="form-control" id="password" name='password' required>
+                    </div>
+                    <div class='mb-3'>
+                        <label for="password2" class="form-label">Confirm Password  <span style='color:red'>*</span></label>
+                        <input type="password" class="form-control" id="password2" name='password2' aria-describedby="password2Feedback" required>
+                        {% with messages = get_flashed_messages(category_filter=["password"]) %}
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div style='color: red' id='password2Feedback' class='form-text'>
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                        {% endwith %}
+                    </div>
+                    <div class='mb-3 text-center'><button type="submit" class="btn btn-primary">Create Account</button></div>
+                </form>
+            </div>
+        </div>
+        <div class='row justify-content-center'>
+            <div class='col-3 new-user'>
+                <div class='mb-3 text-center'>
+                    <p style='margin-top: 1rem;'>Already have an account? <a style='text-decoration: none;' href="{{ url_for('login') }}">Login here</a></p>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/61edb1fc38.js"></script>
+{% endblock %}

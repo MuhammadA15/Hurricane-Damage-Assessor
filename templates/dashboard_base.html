@@ -1,0 +1,40 @@
+<html>
+  <head>
+    {% block styles %}{% endblock %}
+      <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/dashboard_base.css') }}">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+      <title>{% block title %}{% endblock %}</title>
+      {% block scripts %}{% endblock %}
+  </head>
+  <body>
+    <div class="d-flex" id="wrapper">
+      <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="sidebar-heading"><a class="sidebar-title-link" href="{{ url_for('index') }}">Damage Assessor</a></div>
+        <div class="list-group list-group-flush d-flex align-items-center justify-content-center">
+          <a href="{{ url_for('dashboard') }}" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+          <a href="{{ url_for('hurricanes') }}" class="list-group-item list-group-item-action bg-light">Hurricanes</a>
+          <a href="#" class="list-group-item list-group-item-action bg-light">Account</a>
+          <a href="{{ url_for('logout') }}" class="list-group-item list-group-item-action bg-light">Logout</a>
+        </div>
+      </div>
+      <div id="page-content-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+          <span style="font-size: 1.5rem;" class="me-auto">{% block header %}{% endblock %}</span>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              {% if current_user.is_anonymous %}
+              {% else %}
+                <span>User: {{ current_user.username }}</span>
+              {% endif %}
+            </ul>
+          </div>
+        </nav>
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/61edb1fc38.js"></script>
+  </body>
+</html>

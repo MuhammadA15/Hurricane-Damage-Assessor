@@ -1,0 +1,43 @@
+{% extends "dashboard_base.html" %}
+
+{% block styles %}
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/dashboard.css') }}">
+{% endblock %}
+
+{% block title %}
+  Dashboard
+{% endblock %}
+
+{% block header %}
+  Dashboard
+{% endblock %}
+
+{% block content %}
+  <div class="container-fluid">
+    <div class="container">
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="alert alert-success" role="alert">
+          {% for message in messages %}
+            <i class="fa fa-check-circle" aria-hidden="true"><span class="upload-success-flash">{{ message }}</span></i>
+          {% endfor %}
+        </div>
+      {% endif %}
+      {% endwith %}
+      <div class="row">
+        <div class="col">
+          <h2 class="policy">Policies</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <form action="" method="POST" enctype="multipart/form-data">
+            <label for="formFile" class="form-label btn btn-outline-primary">Upload Policy</label>
+            <input name="csv_file" class="form-control" type="file" id="formFile" accept=".csv" required> 
+            <button type="submit" class="btn btn-secondary go-btn" style="display: inline;">Save</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>      
+{% endblock %}

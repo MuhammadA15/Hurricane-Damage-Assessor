@@ -1,0 +1,131 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    min-height:100%;
+    background-color: white;
+}
+
+.home-text{
+    font-family: 'Quicksand', sans-serif;
+}
+
+.jumbotron .h1, .jumbotron h1 {
+    font-size: 50px;
+}
+
+.h4, h4 {
+    font-size: 15px;
+}
+
+.sub-text {
+    margin-top: 35px;
+}
+
+.jumbotron {
+    background-color: rgba(0,0,0,0);
+    color: white;
+}
+
+input[type=file] {
+    display: contents;
+    align-items: center;
+}
+
+label {
+    color: white;
+    border-style: solid;
+    border-color: #007bff;
+    border-width: 1.5px;
+    padding: 0.6rem 1.2rem;
+    cursor: pointer;
+    background-color: #007bff;
+    border-radius: .5rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    float: left;
+    margin: 0 4rem;
+}
+
+label:hover {
+    color: white;
+    border-color: #0062cc;
+    background-color: #0062cc;
+}
+
+.btn {
+    font-weight: 700;
+    border: 1.5px solid gray;
+    margin: 0 1.5rem;
+    background-color: whitesmoke;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.5rem;
+}
+
+input {
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.csv-selector {
+    display: inline;
+}
+
+.csv-submit {
+    display: inline;
+}
+
+button.btn.btn-outline-primary.go-btn {
+    margin: 0 1rem;
+}
+
+div.col.output-table {
+    overflow: auto;
+}
+
+thead {
+    background-color: #333;
+    color: white;
+}
+
+button.btn.btn-outline-primary.download-pdf-btn {
+    display: block;
+    margin-top: 1rem;
+    margin-left: 0;
+    width: 23.3rem;
+}
+
+div.container-fluid {
+    padding-right: var(--bs-gutter-x,1.5rem);
+    padding-left: var(--bs-gutter-x,1.5rem);
+}
+
+div.container {
+    padding-right: var(--bs-gutter-x,0rem);
+    padding-left: var(--bs-gutter-x,0rem);
+}
+
+div.col.lossmap {
+    width: 700px;
+    height: 500px;
+    margin-right: 50px;
+    padding: 0px
+}
+
+div.col.nomap {
+    background-color: #f8f9fa;
+    border-style: ridge;
+    width: 700px;
+    height: 500px;
+    margin-right: 50px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-subtext {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}

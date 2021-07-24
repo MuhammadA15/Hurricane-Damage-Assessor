@@ -1,0 +1,62 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    min-height:100%;
+    background-color: white;
+}
+
+.policy {
+    border-style: solid;
+    border-color: black;
+    border-width: 1.5px;
+    float: left;
+    width: 25rem;
+    height: 10rem;
+    text-align: center;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+label.form-label {
+    padding: 0.4rem 1rem;
+    margin: 0 0;
+}
+
+button.btn.btn-secondary.go-btn {
+    padding: 0.4rem 1rem;
+    border-radius: 0.25rem;
+    margin: 0 1rem;
+    background-color: rgb(247, 247, 247);
+    color: black; 
+}
+
+button.btn.btn-secondary.go-btn:hover {
+    -webkit-transform: translateY(-1px);
+	transform: translateY(-1px);
+}
+
+i.fa.fa-check-circle {
+    color: forestgreen;
+}
+
+.upload-success-flash {
+    margin-left: 0.75rem;
+}
+
+div.alert.alert-success {
+    margin-bottom: 2rem;
+}
+
+div.container-fluid {
+    padding-right: var(--bs-gutter-x,1.5rem);
+    padding-left: var(--bs-gutter-x,1.5rem);
+}
+
+div.container {
+    padding-right: var(--bs-gutter-x,0rem);
+    padding-left: var(--bs-gutter-x,0rem);
+}

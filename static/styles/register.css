@@ -1,0 +1,22 @@
+input#username {
+    width: 99%
+}
+
+input#password {
+    width: 99%
+}
+
+button.btn.btn-primary {
+    width: 99%
+}
+
+div.col-3.form-col {
+    padding: 1rem 1rem;
+    border-radius: 6px;
+    background-color: #f6f8fa
+}
+
+div.col-3.new-user {
+    border-radius: 6px;
+    border: 1px solid #d1d5da;
+}
